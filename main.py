@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 from Process import get_processes
 from scheduling import schedule
 from utils import display_results

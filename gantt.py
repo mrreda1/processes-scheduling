@@ -1,3 +1,4 @@
+import os
 import matplotlib.pyplot as plt
 from Process import Process
 import numpy as np
@@ -21,3 +22,4 @@ def printChart(scheduling_order: list[Process]):
     plt.legend(loc='lower right')
     plt.grid(axis='x')
     plt.savefig('plot.png')
+    os.system("viewnior plot.png &")
