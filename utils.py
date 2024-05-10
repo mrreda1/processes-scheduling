@@ -19,6 +19,7 @@ def calculate_metrics(processes: list[Process]) -> dict:
     avg_time['turnaround'] /= num_processes
 
     return avg_time
+
 def display_results(scheduling_order , avg_time):
     print("\nProcess\t Waiting Time\t Turnaround Time")
     for process in scheduling_order:
