@@ -12,7 +12,7 @@ def schedule(processes: list[Process]) -> list[Process]:
 
     while completed_processes < total_processes:
         # Filter arrived proccess
-        available_processes = [p for p in processes if p.arrival_time <= current_time and p.burst_time > 0]
+        available_processes = [p for p in processes if p.arrival_time <= current_time]
 
         if not available_processes:
             current_time += 1
