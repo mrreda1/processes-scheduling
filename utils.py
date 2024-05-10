@@ -20,10 +20,12 @@ def calculate_metrics(processes: list[Process]) -> dict:
 
     return avg_time
 
-def display_results(scheduling_order , avg_time):
+def display_results(scheduling_order):
+    metrics = calculate_metrics(scheduling_order)
+
     print("\nProcess\t Waiting Time\t Turnaround Time")
     for process in scheduling_order:
         print(f"{process.pid}\t {process.waiting_time}\t\t {process.turnaround_time}\t")
     
-    print("\nAverage Waiting Time: ", round(avg_time['waiting'], 3))
-    print("Average Turnaround Time: ", round(avg_time['turnaround'], 3))
+    print("\nAverage Waiting Time: ", round(metrics['waiting'], 3))
+    print("Average Turnaround Time: ", round(metrics['turnaround'], 3))
