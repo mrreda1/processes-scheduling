@@ -14,11 +14,16 @@ class Process:
  turnaround_time={self.turnaround_time}>'
 
 
-def get_processes(num_processes):
+def get_processes():
     processes = []
-    for i in range(num_processes):
-        pid = i + 1
-        arrival_time = int(input(f"Enter arrival time for Process {pid}: "))
-        burst_time = int(input(f"Enter burst time for Process {pid}: "))
-        processes.append(Process(arrival_time, burst_time))
+    arrival_time = 0
+    burst_time = 1
+    with open('input.txt', 'r') as file:
+        for line in file:
+            if (burst_time != 0):
+                arrival_time = int(line.strip())
+                burst_time = 0
+            else:
+                burst_time = int(line.strip())
+                processes.append(Process(arrival_time, burst_time))
     return processes

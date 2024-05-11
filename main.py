@@ -5,17 +5,16 @@ from scheduling import schedule
 from utils import display_results
 from gantt import printChart
 
-num_of_processes = input("How many processes? ")
+# num_of_processes = input("How many processes? ")
+#
+# try:
+#     num_of_processes = int(num_of_processes)
+# except Exception as e:
+#     raise e
 
-try:
-    num_of_processes = int(num_of_processes)
-except Exception as e:
-    raise e
-
-processes = get_processes(num_of_processes)
-
+processes = get_processes()
 scheduling_order = schedule(processes)
 
-display_results(scheduling_order)
+# display_results(scheduling_order)
 
 printChart(scheduling_order)
