@@ -1,2 +1,2 @@
 # processes-scheduling
-A minimal program simulate processes scheduling.
+A minimal program that simulates processes scheduling.
